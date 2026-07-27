@@ -1,0 +1,121 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DriveMeter – Privacy Policy</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;
+         max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; line-height: 1.65; color: #1c2733; }
+  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 1.8em; }
+  hr { margin: 3em 0; border: none; border-top: 1px solid #ccc; }
+  code { background: rgba(127,127,127,.14); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+  .callout { border-left: 3px solid #3DFF9E; background: rgba(61,255,158,.08);
+             padding: 12px 16px; margin: 1.4em 0; border-radius: 0 6px 6px 0; }
+  @media (prefers-color-scheme: dark) { body { background: #0c1420; color: #dbe4ee; } hr { border-top-color: #33414f; } }
+</style>
+
+<h1>DriveMeter – Privacy Policy</h1>
+<p><em>Last updated: 27 July 2026</em></p>
+
+<p>DriveMeter ("the app") is a GPS speedometer and trip cost meter. This policy explains what data the app handles and your choices. <strong>The app has no user accounts, no server, and no internet permission at all.</strong> Everything you record stays on your device.</p>
+
+<div class="callout">
+  <strong>Verifiable, not just promised.</strong> DriveMeter does not declare the <code>android.permission.INTERNET</code> permission. Without it, Android blocks the app from making any network connection — so your trip and location data physically cannot be transmitted anywhere, by us or by anyone else. You can confirm this yourself by inspecting the app's permission list.
+</div>
+
+<h2>Data we handle</h2>
+<ul>
+  <li><strong>Location data.</strong> With your permission, the app reads your device's GPS position while you are recording a trip. Coordinates are used solely to compute speed, distance, and idle time, which in turn produce the trip's fuel or electricity cost. Location is processed entirely on your device and is never transmitted.</li>
+  <li><strong>Background location.</strong> Drivers typically start a trip and then switch to a navigation or rideshare app. To keep measuring during that time, DriveMeter requests "Allow all the time" location access and runs a foreground service. Tracking runs <strong>only while a trip is actively recording</strong> — you start it by tapping START TRIP and stop it by tapping FINISH. A persistent notification showing live speed, distance, and cost is visible for the entire duration. Ending the trip stops location access immediately.</li>
+  <li><strong>Trip records.</strong> Distance, duration, idle time, energy used, and cost for each trip are saved to a local database on your device. You can classify a trip as Business or Personal, add a note, and record a fare.</li>
+  <li><strong>Vehicle and rate settings.</strong> Vehicle names, fuel or energy efficiency figures, energy prices, and time-of-use electricity rates that you enter are stored locally.</li>
+  <li><strong>Route breadcrumbs (off by default).</strong> The app can optionally store the individual GPS points of a trip. This setting is <strong>disabled unless you turn it on</strong>, and the stored points can be deleted separately from your trip history at any time.</li>
+</ul>
+
+<h2>Data we do NOT collect</h2>
+<ul>
+  <li>No accounts, sign-in, email address, or user profile — there is nothing to register.</li>
+  <li>No server or database operated by the developer. We never receive a copy of your data.</li>
+  <li>No analytics, crash reporting, or tracking SDKs of any kind.</li>
+  <li>No advertising and no advertising identifier.</li>
+  <li>No contacts, call logs, SMS, photos, or files.</li>
+  <li>We do not sell, share, or transfer your personal data to anyone. The app cannot, because it has no network access.</li>
+</ul>
+
+<h2>Permissions and why they are needed</h2>
+<ul>
+  <li><strong>Location (precise, and background).</strong> The core function: measuring speed, distance, and trip cost. Background access is required because tracking must continue when you switch to your navigation app mid-journey.</li>
+  <li><strong>Foreground service (location type).</strong> Keeps trip measurement running with a visible, ongoing notification while the app is not on screen.</li>
+  <li><strong>Notifications.</strong> Displays the ongoing trip status notification.</li>
+  <li><strong>Display over other apps (optional).</strong> Shows the floating meter above your navigation app. The app works fully without granting this.</li>
+  <li><strong>Ignore battery optimisation (optional).</strong> Prevents the system from ending trip tracking during a long shift. You may decline this.</li>
+  <li><strong>Wake lock.</strong> Keeps the screen awake while the app is mounted, if you enable that setting.</li>
+</ul>
+
+<h2>Where your data is stored</h2>
+<p>All data is stored in a local SQLite database in the app's private storage on your device. It is not backed up to any cloud service by the app. Files you explicitly export (CSV or PDF reports) are written to your device's storage, and are shared only if you choose to share them using your device's own share sheet.</p>
+
+<h2>Data retention and deletion</h2>
+<p>Your data is kept as long as you keep it. You can delete individual trips by swiping them away in the trip list, or erase everything at once via <em>Settings → Privacy &amp; Data → Delete all data</em>. Because there is no server, there is no account on our side to delete. Uninstalling the app removes all locally stored data.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children under 13 and does not knowingly collect data from them.</p>
+
+<h2>Changes</h2>
+<p>We may update this policy from time to time. Material changes will be reflected on this page with a new "Last updated" date.</p>
+
+<h2>Contact</h2>
+<p>For questions or data deletion requests: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a></p>
+
+<hr>
+
+<h1>DriveMeter – นโยบายความเป็นส่วนตัว (ภาษาไทย)</h1>
+<p><em>ปรับปรุงล่าสุด: 27 กรกฎาคม 2569</em></p>
+
+<p>DriveMeter ("แอป") เป็นแอปวัดความเร็ว GPS และมิเตอร์ค่าใช้จ่ายต่อเที่ยว นโยบายนี้อธิบายว่าแอปจัดการข้อมูลอะไรบ้างและคุณมีทางเลือกอย่างไร <strong>แอปไม่มีระบบบัญชีผู้ใช้ ไม่มีเซิร์ฟเวอร์ และไม่มีสิทธิ์เข้าถึงอินเทอร์เน็ตเลย</strong> ทุกอย่างที่คุณบันทึกอยู่ในเครื่องของคุณ</p>
+
+<div class="callout">
+  <strong>ตรวจสอบได้จริง ไม่ใช่แค่คำสัญญา</strong> — DriveMeter ไม่ได้ประกาศสิทธิ์ <code>android.permission.INTERNET</code> เมื่อไม่มีสิทธิ์นี้ Android จะบล็อกไม่ให้แอปเชื่อมต่อเครือข่ายใด ๆ ข้อมูลทริปและตำแหน่งของคุณจึง<strong>ส่งออกไปไหนไม่ได้ในทางเทคนิค</strong> ไม่ว่าโดยเราหรือใครก็ตาม คุณตรวจสอบเองได้จากรายการสิทธิ์ของแอป
+</div>
+
+<h2>ข้อมูลที่เราจัดการ</h2>
+<ul>
+  <li><strong>ข้อมูลตำแหน่ง</strong> — แอปอ่านตำแหน่ง GPS ขณะที่คุณบันทึกทริป พิกัดถูกใช้เพื่อคำนวณความเร็ว ระยะทาง และเวลาจอดนิ่ง ซึ่งนำไปคิดเป็นค่าน้ำมันหรือค่าไฟของทริปนั้น ประมวลผลในเครื่องทั้งหมด และไม่ถูกส่งออกไปไหน</li>
+  <li><strong>ตำแหน่งเบื้องหลัง</strong> — โดยทั่วไปคนขับจะเริ่มทริปแล้วสลับไปใช้แอปนำทางหรือแอปเรียกรถ เพื่อให้วัดผลต่อเนื่องได้ DriveMeter จึงขอสิทธิ์ตำแหน่งแบบ "อนุญาตตลอดเวลา" และใช้ foreground service การติดตามจะทำงาน<strong>เฉพาะขณะบันทึกทริปอยู่เท่านั้น</strong> คุณเป็นผู้เริ่มเองด้วยการกด START TRIP และหยุดเองด้วยการกด FINISH โดยมีการแจ้งเตือนค้างแสดงความเร็ว ระยะทาง และค่าใช้จ่ายตลอดเวลาที่บันทึก เมื่อจบทริป การเข้าถึงตำแหน่งจะหยุดทันที</li>
+  <li><strong>บันทึกทริป</strong> — ระยะทาง ระยะเวลา เวลาจอดนิ่ง พลังงานที่ใช้ และค่าใช้จ่ายของแต่ละทริป ถูกเก็บในฐานข้อมูลในเครื่อง คุณสามารถระบุว่าเป็นทริปงานหรือส่วนตัว ใส่หมายเหตุ และบันทึกค่าโดยสารได้</li>
+  <li><strong>ข้อมูลรถและอัตราค่าพลังงาน</strong> — ชื่อรถ อัตราสิ้นเปลือง ราคาพลังงาน และอัตราค่าไฟตามช่วงเวลาที่คุณกรอก เก็บไว้ในเครื่อง</li>
+  <li><strong>เส้นทางแบบละเอียด (ปิดไว้เป็นค่าเริ่มต้น)</strong> — แอปสามารถเก็บจุด GPS แต่ละจุดของทริปได้ แต่ตัวเลือกนี้<strong>ปิดอยู่จนกว่าคุณจะเปิดเอง</strong> และลบแยกจากประวัติทริปได้ทุกเมื่อ</li>
+</ul>
+
+<h2>ข้อมูลที่เราไม่เก็บ</h2>
+<ul>
+  <li>ไม่มีบัญชีผู้ใช้ ไม่มีการลงชื่อเข้าใช้ ไม่มีอีเมลหรือโปรไฟล์ — ไม่มีอะไรให้สมัคร</li>
+  <li>ไม่มีเซิร์ฟเวอร์หรือฐานข้อมูลของผู้พัฒนา เราไม่เคยได้รับสำเนาข้อมูลของคุณ</li>
+  <li>ไม่มี analytics ไม่มีระบบรายงานข้อผิดพลาด ไม่มี tracking SDK ใด ๆ</li>
+  <li>ไม่มีโฆษณา และไม่มีการใช้รหัสโฆษณา</li>
+  <li>ไม่เข้าถึงรายชื่อผู้ติดต่อ ประวัติการโทร SMS รูปภาพ หรือไฟล์ใด ๆ</li>
+  <li>เราไม่ขาย ไม่แชร์ และไม่โอนข้อมูลส่วนตัวของคุณให้ใคร ซึ่งแอปทำไม่ได้อยู่แล้วเพราะไม่มีสิทธิ์เข้าถึงเครือข่าย</li>
+</ul>
+
+<h2>สิทธิ์ที่ใช้และเหตุผล</h2>
+<ul>
+  <li><strong>ตำแหน่ง (แม่นยำ และเบื้องหลัง)</strong> — ฟังก์ชันหลักของแอป ใช้วัดความเร็ว ระยะทาง และค่าใช้จ่าย สิทธิ์เบื้องหลังจำเป็นเพราะการวัดต้องดำเนินต่อเมื่อคุณสลับไปแอปนำทางระหว่างเดินทาง</li>
+  <li><strong>Foreground service (ประเภทตำแหน่ง)</strong> — ทำให้การวัดทริปทำงานต่อได้พร้อมการแจ้งเตือนที่มองเห็นตลอด ขณะที่แอปไม่ได้อยู่บนหน้าจอ</li>
+  <li><strong>การแจ้งเตือน</strong> — แสดงสถานะทริปที่กำลังบันทึก</li>
+  <li><strong>แสดงทับแอปอื่น (ไม่บังคับ)</strong> — แสดงมิเตอร์ลอยเหนือแอปนำทาง แอปใช้งานได้ครบถ้วนแม้ไม่อนุญาตข้อนี้</li>
+  <li><strong>ยกเว้นการประหยัดแบตเตอรี่ (ไม่บังคับ)</strong> — ป้องกันระบบปิดการติดตามระหว่างทำงานเป็นกะยาว คุณปฏิเสธได้</li>
+  <li><strong>Wake lock</strong> — ป้องกันหน้าจอดับขณะติดตั้งเครื่องบนรถ หากคุณเปิดใช้การตั้งค่านี้</li>
+</ul>
+
+<h2>ที่เก็บข้อมูล</h2>
+<p>ข้อมูลทั้งหมดเก็บในฐานข้อมูล SQLite ในพื้นที่ส่วนตัวของแอปบนเครื่องคุณ แอปไม่ได้สำรองข้อมูลขึ้นบริการคลาวด์ใด ๆ ไฟล์ที่คุณส่งออกเอง (รายงาน CSV หรือ PDF) จะถูกเขียนลงที่เก็บข้อมูลของเครื่อง และจะถูกแชร์ก็ต่อเมื่อคุณเลือกแชร์ผ่านเมนูแชร์ของระบบเท่านั้น</p>
+
+<h2>การเก็บรักษาและการลบข้อมูล</h2>
+<p>ข้อมูลของคุณอยู่ตราบเท่าที่คุณเก็บไว้ คุณลบทริปแต่ละรายการได้ด้วยการปัดในหน้ารายการทริป หรือลบทั้งหมดพร้อมกันได้ที่ <em>การตั้งค่า → ความเป็นส่วนตัวและข้อมูล → ลบข้อมูลทั้งหมด</em> เนื่องจากไม่มีเซิร์ฟเวอร์ จึงไม่มีบัญชีฝั่งเราให้ลบ การถอนการติดตั้งแอปจะลบข้อมูลในเครื่องทั้งหมด</p>
+
+<h2>เด็ก</h2>
+<p>แอปนี้ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี และไม่มีการเก็บข้อมูลจากเด็กโดยเจตนา</p>
+
+<h2>การเปลี่ยนแปลง</h2>
+<p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงที่มีนัยสำคัญจะแสดงบนหน้านี้พร้อมวันที่ "ปรับปรุงล่าสุด" ใหม่</p>
+
+<h2>ติดต่อ</h2>
+<p>สำหรับคำถามหรือการขอลบข้อมูล: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a></p>
