@@ -2,120 +2,449 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DriveMeter – Privacy Policy</title>
 <style>
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;
-         max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; line-height: 1.65; color: #1c2733; }
-  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 1.8em; }
-  hr { margin: 3em 0; border: none; border-top: 1px solid #ccc; }
-  code { background: rgba(127,127,127,.14); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
-  .callout { border-left: 3px solid #3DFF9E; background: rgba(61,255,158,.08);
-             padding: 12px 16px; margin: 1.4em 0; border-radius: 0 6px 6px 0; }
-  @media (prefers-color-scheme: dark) { body { background: #0c1420; color: #dbe4ee; } hr { border-top-color: #33414f; } }
+  :root { --fg:#1c2733; --bg:#fff; --muted:#5a6b7d; --rule:#d5dde5;
+          --accent:#0e9f6e; --chip:rgba(127,127,127,.14); }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#dbe4ee; --bg:#0c1420; --muted:#93a3b5; --rule:#33414f;
+            --accent:#3DFF9E; --chip:rgba(255,255,255,.10); }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+         "Noto Sans Thai", "Noto Sans SC", "Noto Sans Arabic", sans-serif;
+         max-width: 780px; margin: 0 auto; padding: 24px 20px 72px;
+         line-height: 1.68; color: var(--fg); background: var(--bg); }
+  h1 { font-size: 1.55em; line-height: 1.3; margin-bottom: .2em; }
+  h2 { font-size: 1.14em; margin-top: 1.9em; margin-bottom: .5em; }
+  .lang-head { font-size: 1.36em; padding-bottom: .25em;
+               border-bottom: 2px solid var(--accent); }
+  p, li { overflow-wrap: break-word; }
+  ul { padding-left: 1.3em; }
+  li { margin-bottom: .5em; }
+  code { background: var(--chip); padding: 1px 5px; border-radius: 4px;
+         font-size: .9em; word-break: break-all; }
+  a { color: var(--accent); }
+  hr { margin: 3.4em 0; border: none; border-top: 1px solid var(--rule); }
+  .updated { color: var(--muted); font-size: .92em; margin-top: 0; }
+  .callout { border-left: 3px solid var(--accent); background: var(--chip);
+             padding: 12px 16px; margin: 1.5em 0; border-radius: 0 6px 6px 0; }
+  nav { background: var(--chip); border-radius: 8px; padding: 12px 16px;
+        margin: 1.5em 0 2.5em; font-size: .95em; }
+  nav ul { list-style: none; padding: 0; margin: .4em 0 0;
+           display: flex; flex-wrap: wrap; gap: .5em 1.4em; }
+  nav li { margin: 0; }
+  [dir="rtl"] { text-align: right; }
+  [dir="rtl"] ul { padding-left: 0; padding-right: 1.3em; }
+  [dir="rtl"] .callout { border-left: none; border-right: 3px solid var(--accent);
+                         border-radius: 6px 0 0 6px; }
 </style>
 
 <h1>DriveMeter – Privacy Policy</h1>
-<p><em>Last updated: 27 July 2026</em></p>
+<p class="updated"><em>Last updated: 27 July 2026</em></p>
 
-<p>DriveMeter ("the app") is a GPS speedometer and trip cost meter. This policy explains what data the app handles and your choices. <strong>The app has no user accounts, no server, and no internet permission at all.</strong> Everything you record stays on your device.</p>
+<nav>
+  <strong>Languages · 语言 · Idiomas · اللغات · ภาษา</strong>
+  <ul>
+    <li><a href="#en">English</a></li>
+    <li><a href="#zh">中文（简体）</a></li>
+    <li><a href="#es">Español</a></li>
+    <li><a href="#ar">العربية</a></li>
+    <li><a href="#th">ภาษาไทย</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== ENGLISH ==================== -->
+<h2 id="en" class="lang-head">English</h2>
+
+<p>DriveMeter ("the app") is a GPS speedometer and trip cost meter for drivers. This policy explains what data the app handles, why, and what control you have. <strong>The app has no user accounts, no server, and no internet permission.</strong> Everything you record stays on your device.</p>
 
 <div class="callout">
-  <strong>Verifiable, not just promised.</strong> DriveMeter does not declare the <code>android.permission.INTERNET</code> permission. Without it, Android blocks the app from making any network connection — so your trip and location data physically cannot be transmitted anywhere, by us or by anyone else. You can confirm this yourself by inspecting the app's permission list.
+  <strong>Verifiable, not merely promised.</strong> DriveMeter does not declare the <code>android.permission.INTERNET</code> permission. Without it, Android blocks the app from opening any network connection — so your trip and location data physically cannot be transmitted anywhere, by us or by anyone else. You can confirm this yourself in the app's permission list on the Play Store.
 </div>
 
-<h2>Data we handle</h2>
+<h2>Who we are</h2>
+<p>DriveMeter is published by Overdrive Labs. We are the data controller for the purposes of the GDPR, though in practice we never receive your data: it is created and stored solely on your device.</p>
+
+<h2>Data the app handles</h2>
 <ul>
-  <li><strong>Location data.</strong> With your permission, the app reads your device's GPS position while you are recording a trip. Coordinates are used solely to compute speed, distance, and idle time, which in turn produce the trip's fuel or electricity cost. Location is processed entirely on your device and is never transmitted.</li>
-  <li><strong>Background location.</strong> Drivers typically start a trip and then switch to a navigation or rideshare app. To keep measuring during that time, DriveMeter requests "Allow all the time" location access and runs a foreground service. Tracking runs <strong>only while a trip is actively recording</strong> — you start it by tapping START TRIP and stop it by tapping FINISH. A persistent notification showing live speed, distance, and cost is visible for the entire duration. Ending the trip stops location access immediately.</li>
-  <li><strong>Trip records.</strong> Distance, duration, idle time, energy used, and cost for each trip are saved to a local database on your device. You can classify a trip as Business or Personal, add a note, and record a fare.</li>
+  <li><strong>Location data.</strong> With your permission, the app reads your device's GPS position while a trip is recording. Coordinates are used only to compute speed, distance travelled, and time spent stationary, which together produce the trip's fuel or electricity cost. Processing happens entirely on your device.</li>
+  <li><strong>Background location.</strong> Drivers typically start a trip and then switch to a navigation or rideshare app. To keep measuring during that time, DriveMeter requests "Allow all the time" location access and runs a foreground service. Tracking runs <strong>only while a trip is actively recording</strong>, which you start by tapping START TRIP and end by tapping FINISH. A persistent notification showing live speed, distance and cost is visible throughout. Ending the trip stops location access immediately.</li>
+  <li><strong>Trip records.</strong> Distance, duration, idle time, maximum speed, energy used and cost for each trip are saved to a local database. You may classify a trip as Business or Personal, add a note, and record a fare.</li>
   <li><strong>Vehicle and rate settings.</strong> Vehicle names, fuel or energy efficiency figures, energy prices, and time-of-use electricity rates that you enter are stored locally.</li>
-  <li><strong>Route breadcrumbs (off by default).</strong> The app can optionally store the individual GPS points of a trip. This setting is <strong>disabled unless you turn it on</strong>, and the stored points can be deleted separately from your trip history at any time.</li>
+  <li><strong>Route breadcrumbs (disabled by default).</strong> The app can optionally store the individual GPS points of a trip. This setting is <strong>off unless you turn it on</strong>, and those points can be deleted separately from your trip history at any time.</li>
+  <li><strong>App preferences.</strong> Units, currency, display options and similar settings are stored locally on your device.</li>
 </ul>
 
-<h2>Data we do NOT collect</h2>
+<h2>What we do not collect</h2>
 <ul>
-  <li>No accounts, sign-in, email address, or user profile — there is nothing to register.</li>
-  <li>No server or database operated by the developer. We never receive a copy of your data.</li>
-  <li>No analytics, crash reporting, or tracking SDKs of any kind.</li>
+  <li>No accounts, sign-in, email address or user profile — there is nothing to register.</li>
+  <li>No server or database operated by us. We never receive a copy of your data.</li>
+  <li>No analytics, crash reporting or tracking SDKs of any kind.</li>
   <li>No advertising and no advertising identifier.</li>
-  <li>No contacts, call logs, SMS, photos, or files.</li>
-  <li>We do not sell, share, or transfer your personal data to anyone. The app cannot, because it has no network access.</li>
+  <li>No contacts, call logs, SMS, photos or files.</li>
+  <li>We do not sell, share or transfer your personal data. The app cannot, having no network access.</li>
 </ul>
 
-<h2>Permissions and why they are needed</h2>
+<h2>Permissions and why each is needed</h2>
 <ul>
-  <li><strong>Location (precise, and background).</strong> The core function: measuring speed, distance, and trip cost. Background access is required because tracking must continue when you switch to your navigation app mid-journey.</li>
-  <li><strong>Foreground service (location type).</strong> Keeps trip measurement running with a visible, ongoing notification while the app is not on screen.</li>
+  <li><strong>Precise and approximate location.</strong> The core function: measuring speed, distance and trip cost.</li>
+  <li><strong>Background location.</strong> Required because measurement must continue when you switch to your navigation app mid-journey.</li>
+  <li><strong>Foreground service (location type).</strong> Keeps trip measurement running with a visible ongoing notification while the app is off screen.</li>
   <li><strong>Notifications.</strong> Displays the ongoing trip status notification.</li>
-  <li><strong>Display over other apps (optional).</strong> Shows the floating meter above your navigation app. The app works fully without granting this.</li>
-  <li><strong>Ignore battery optimisation (optional).</strong> Prevents the system from ending trip tracking during a long shift. You may decline this.</li>
-  <li><strong>Wake lock.</strong> Keeps the screen awake while the app is mounted, if you enable that setting.</li>
+  <li><strong>Display over other apps (optional).</strong> Shows the floating meter above your navigation app. The app works fully without it.</li>
+  <li><strong>Ignore battery optimisation (optional).</strong> Prevents the system ending trip tracking during a long shift. You may decline.</li>
+  <li><strong>Wake lock.</strong> Keeps the screen awake while mounted, if you enable that setting.</li>
 </ul>
+
+<h2>Legal basis for processing (GDPR)</h2>
+<p>Where the GDPR applies, our legal basis is your <strong>consent</strong> (Article 6(1)(a)), given when you grant location permission, and <strong>performance of a contract</strong> (Article 6(1)(b)) for the app functionality you requested. You may withdraw consent at any time by revoking the location permission in your device settings; the app will stop measuring trips but remains usable for viewing past records.</p>
+
+<h2>Your rights</h2>
+<p>Under the GDPR, PIPL, CCPA, PDPA and similar laws you have rights of access, rectification, erasure, restriction, portability and objection. Because your data never leaves your device, you exercise these rights directly in the app rather than by contacting us:</p>
+<ul>
+  <li><strong>Access and portability</strong> — export your trips to CSV or PDF from the trip list.</li>
+  <li><strong>Rectification</strong> — edit trip classification, notes, fares, vehicles and rates in the app.</li>
+  <li><strong>Erasure</strong> — swipe to delete individual trips, or use <em>Settings → Privacy &amp; Data → Delete all data</em>. Uninstalling removes everything.</li>
+  <li><strong>Restriction and objection</strong> — revoke the location permission, or disable route breadcrumbs.</li>
+</ul>
+<p>We hold no copy of your data, so there is no account for us to look up, correct or delete on your behalf.</p>
 
 <h2>Where your data is stored</h2>
-<p>All data is stored in a local SQLite database in the app's private storage on your device. It is not backed up to any cloud service by the app. Files you explicitly export (CSV or PDF reports) are written to your device's storage, and are shared only if you choose to share them using your device's own share sheet.</p>
+<p>All data is stored in a local SQLite database in the app's private storage on your device. The app performs no cloud backup. Files you explicitly export (CSV or PDF reports) are written to your device's storage and are shared only if you choose to share them using your device's own share sheet — at which point they are handled by whatever app you send them to.</p>
+
+<h2>International transfers</h2>
+<p>None. Your data is not transmitted off your device by the app, so no cross-border transfer occurs.</p>
 
 <h2>Data retention and deletion</h2>
-<p>Your data is kept as long as you keep it. You can delete individual trips by swiping them away in the trip list, or erase everything at once via <em>Settings → Privacy &amp; Data → Delete all data</em>. Because there is no server, there is no account on our side to delete. Uninstalling the app removes all locally stored data.</p>
+<p>Your data is kept for as long as you keep it. Delete individual trips by swiping them away in the trip list, or erase everything at once via <em>Settings → Privacy &amp; Data → Delete all data</em>. Because there is no server, there is no account on our side to delete. Uninstalling the app removes all locally stored data.</p>
 
 <h2>Children</h2>
-<p>The app is not directed at children under 13 and does not knowingly collect data from them.</p>
+<p>The app is not directed at children under 13 (or the equivalent minimum age in your jurisdiction) and does not knowingly collect data from them.</p>
 
-<h2>Changes</h2>
-<p>We may update this policy from time to time. Material changes will be reflected on this page with a new "Last updated" date.</p>
+<h2>Security</h2>
+<p>Data resides in the app's private storage, which the operating system isolates from other apps. Because nothing is transmitted, there is no server or transmission channel to breach. Physical access to an unlocked device would allow access to exported files, so we recommend keeping a device lock enabled.</p>
+
+<h2>Changes to this policy</h2>
+<p>We may update this policy from time to time. Material changes will be reflected here with a new "Last updated" date. Continued use of the app after a change constitutes acceptance of the revised policy.</p>
 
 <h2>Contact</h2>
-<p>For questions or data deletion requests: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a></p>
+<p>Questions, complaints or data requests: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a>. If you are in the EU or UK and are unsatisfied with our response, you may lodge a complaint with your local data protection authority.</p>
 
 <hr>
 
-<h1>DriveMeter – นโยบายความเป็นส่วนตัว (ภาษาไทย)</h1>
-<p><em>ปรับปรุงล่าสุด: 27 กรกฎาคม 2569</em></p>
+<!-- ==================== 中文（简体） ==================== -->
+<h2 id="zh" class="lang-head">中文（简体）</h2>
 
-<p>DriveMeter ("แอป") เป็นแอปวัดความเร็ว GPS และมิเตอร์ค่าใช้จ่ายต่อเที่ยว นโยบายนี้อธิบายว่าแอปจัดการข้อมูลอะไรบ้างและคุณมีทางเลือกอย่างไร <strong>แอปไม่มีระบบบัญชีผู้ใช้ ไม่มีเซิร์ฟเวอร์ และไม่มีสิทธิ์เข้าถึงอินเทอร์เน็ตเลย</strong> ทุกอย่างที่คุณบันทึกอยู่ในเครื่องของคุณ</p>
+<p>DriveMeter（下称“本应用”）是一款面向驾驶者的 GPS 速度表与行程成本计量应用。本政策说明本应用处理哪些数据、用途，以及您拥有的控制权。<strong>本应用没有用户账户、没有服务器，也没有互联网权限。</strong>您记录的所有内容都保存在您的设备上。</p>
 
 <div class="callout">
-  <strong>ตรวจสอบได้จริง ไม่ใช่แค่คำสัญญา</strong> — DriveMeter ไม่ได้ประกาศสิทธิ์ <code>android.permission.INTERNET</code> เมื่อไม่มีสิทธิ์นี้ Android จะบล็อกไม่ให้แอปเชื่อมต่อเครือข่ายใด ๆ ข้อมูลทริปและตำแหน่งของคุณจึง<strong>ส่งออกไปไหนไม่ได้ในทางเทคนิค</strong> ไม่ว่าโดยเราหรือใครก็ตาม คุณตรวจสอบเองได้จากรายการสิทธิ์ของแอป
+  <strong>可验证，而非仅是承诺。</strong>DriveMeter 未声明 <code>android.permission.INTERNET</code> 权限。缺少该权限时，Android 会阻止本应用建立任何网络连接，因此您的行程与位置数据在技术上无法被传输到任何地方——无论是我们还是他人。您可在 Play 商店的应用权限列表中自行核实。
 </div>
 
-<h2>ข้อมูลที่เราจัดการ</h2>
+<h2>关于我们</h2>
+<p>DriveMeter 由 Overdrive Labs 发布。就 GDPR 而言我们是数据控制者，但实际上我们从未收到您的数据：数据仅在您的设备上生成并存储。</p>
+
+<h2>本应用处理的数据</h2>
 <ul>
-  <li><strong>ข้อมูลตำแหน่ง</strong> — แอปอ่านตำแหน่ง GPS ขณะที่คุณบันทึกทริป พิกัดถูกใช้เพื่อคำนวณความเร็ว ระยะทาง และเวลาจอดนิ่ง ซึ่งนำไปคิดเป็นค่าน้ำมันหรือค่าไฟของทริปนั้น ประมวลผลในเครื่องทั้งหมด และไม่ถูกส่งออกไปไหน</li>
-  <li><strong>ตำแหน่งเบื้องหลัง</strong> — โดยทั่วไปคนขับจะเริ่มทริปแล้วสลับไปใช้แอปนำทางหรือแอปเรียกรถ เพื่อให้วัดผลต่อเนื่องได้ DriveMeter จึงขอสิทธิ์ตำแหน่งแบบ "อนุญาตตลอดเวลา" และใช้ foreground service การติดตามจะทำงาน<strong>เฉพาะขณะบันทึกทริปอยู่เท่านั้น</strong> คุณเป็นผู้เริ่มเองด้วยการกด START TRIP และหยุดเองด้วยการกด FINISH โดยมีการแจ้งเตือนค้างแสดงความเร็ว ระยะทาง และค่าใช้จ่ายตลอดเวลาที่บันทึก เมื่อจบทริป การเข้าถึงตำแหน่งจะหยุดทันที</li>
-  <li><strong>บันทึกทริป</strong> — ระยะทาง ระยะเวลา เวลาจอดนิ่ง พลังงานที่ใช้ และค่าใช้จ่ายของแต่ละทริป ถูกเก็บในฐานข้อมูลในเครื่อง คุณสามารถระบุว่าเป็นทริปงานหรือส่วนตัว ใส่หมายเหตุ และบันทึกค่าโดยสารได้</li>
-  <li><strong>ข้อมูลรถและอัตราค่าพลังงาน</strong> — ชื่อรถ อัตราสิ้นเปลือง ราคาพลังงาน และอัตราค่าไฟตามช่วงเวลาที่คุณกรอก เก็บไว้ในเครื่อง</li>
-  <li><strong>เส้นทางแบบละเอียด (ปิดไว้เป็นค่าเริ่มต้น)</strong> — แอปสามารถเก็บจุด GPS แต่ละจุดของทริปได้ แต่ตัวเลือกนี้<strong>ปิดอยู่จนกว่าคุณจะเปิดเอง</strong> และลบแยกจากประวัติทริปได้ทุกเมื่อ</li>
+  <li><strong>位置数据。</strong>经您授权，本应用在记录行程期间读取设备的 GPS 位置。坐标仅用于计算速度、行驶距离和静止时长，据此得出该行程的燃油或电力成本。全部处理均在您的设备上完成。</li>
+  <li><strong>后台位置。</strong>驾驶者通常开始行程后会切换到导航或网约车应用。为在此期间持续计量，DriveMeter 需要“始终允许”的位置权限并运行前台服务。追踪<strong>仅在行程正在记录时运行</strong>，由您点击“开始行程”启动、点击“结束”停止。整个过程中会显示常驻通知，实时展示速度、距离与成本。结束行程后立即停止位置访问。</li>
+  <li><strong>行程记录。</strong>每次行程的距离、时长、怠速时间、最高速度、能耗与成本保存在本地数据库中。您可将行程标记为商务或个人、添加备注并记录车费。</li>
+  <li><strong>车辆与费率设置。</strong>您输入的车辆名称、油耗或能效数据、能源价格及分时电价均存储在本地。</li>
+  <li><strong>路线轨迹点（默认关闭）。</strong>本应用可选择存储行程的各个 GPS 点。此设置<strong>默认关闭，除非您主动开启</strong>，且这些点可随时独立于行程历史单独删除。</li>
+  <li><strong>应用偏好设置。</strong>单位、货币、显示选项等设置存储在您的设备本地。</li>
+</ul>
+
+<h2>我们不收集的内容</h2>
+<ul>
+  <li>没有账户、登录、电子邮箱或用户资料——无需注册。</li>
+  <li>没有我们运营的服务器或数据库。我们从未获得您数据的副本。</li>
+  <li>没有任何分析、崩溃报告或追踪 SDK。</li>
+  <li>没有广告，也不使用广告标识符。</li>
+  <li>不访问通讯录、通话记录、短信、照片或文件。</li>
+  <li>我们不出售、不共享、不转移您的个人数据。由于没有网络访问权限，本应用在技术上也做不到。</li>
+</ul>
+
+<h2>各项权限及其用途</h2>
+<ul>
+  <li><strong>精确与粗略位置。</strong>核心功能：测量速度、距离与行程成本。</li>
+  <li><strong>后台位置。</strong>必需，因为您在途中切换到导航应用后计量必须继续。</li>
+  <li><strong>前台服务（位置类型）。</strong>在应用不在前台时，以可见的常驻通知维持行程计量。</li>
+  <li><strong>通知。</strong>显示行程状态的常驻通知。</li>
+  <li><strong>显示在其他应用上层（可选）。</strong>在导航应用之上显示悬浮计量窗。不授予也不影响应用完整使用。</li>
+  <li><strong>忽略电池优化（可选）。</strong>防止系统在长时间工作中终止行程追踪。您可以拒绝。</li>
+  <li><strong>唤醒锁。</strong>若您启用该设置，可在车载支架使用时保持屏幕常亮。</li>
+</ul>
+
+<h2>处理的法律依据（GDPR）</h2>
+<p>在适用 GDPR 的情形下，我们的法律依据是您授予位置权限时给出的<strong>同意</strong>（第 6(1)(a) 条），以及为实现您所请求的应用功能而<strong>履行合同</strong>（第 6(1)(b) 条）。您可随时在设备设置中撤销位置权限以撤回同意；此后本应用将停止计量行程，但仍可用于查看既往记录。</p>
+
+<h2>您的权利</h2>
+<p>根据 GDPR、《个人信息保护法》、CCPA、PDPA 及类似法律，您享有访问、更正、删除、限制处理、可携带与反对的权利。由于您的数据从未离开设备，您可直接在应用内行使这些权利，无需联系我们：</p>
+<ul>
+  <li><strong>访问与可携带</strong>——在行程列表中将行程导出为 CSV 或 PDF。</li>
+  <li><strong>更正</strong>——在应用内编辑行程分类、备注、车费、车辆与费率。</li>
+  <li><strong>删除</strong>——滑动删除单条行程，或使用<em>设置 → 隐私与数据 → 删除所有数据</em>。卸载应用会清除全部内容。</li>
+  <li><strong>限制与反对</strong>——撤销位置权限，或关闭路线轨迹点记录。</li>
+</ul>
+<p>我们不持有您数据的任何副本，因此没有账户可供我们代为查询、更正或删除。</p>
+
+<h2>数据存储位置</h2>
+<p>所有数据存储在您设备上本应用私有存储空间内的 SQLite 数据库中。本应用不执行任何云备份。您主动导出的文件（CSV 或 PDF 报告）写入设备存储，仅在您选择通过系统分享菜单分享时才会被发送——此后将由您发送到的目标应用处理。</p>
+
+<h2>跨境传输</h2>
+<p>无。本应用不会将您的数据传出设备，因此不存在跨境传输。</p>
+
+<h2>数据保留与删除</h2>
+<p>您的数据保留多久由您决定。在行程列表中滑动可删除单条行程，或通过<em>设置 → 隐私与数据 → 删除所有数据</em>一次性清除。由于没有服务器，我们这边没有账户可删除。卸载应用会移除所有本地存储的数据。</p>
+
+<h2>儿童</h2>
+<p>本应用不面向 13 周岁以下（或您所在司法辖区规定的相应最低年龄）的儿童，也不会在知情的情况下收集其数据。</p>
+
+<h2>安全</h2>
+<p>数据保存在本应用的私有存储中，操作系统会将其与其他应用隔离。由于不进行任何传输，不存在可被攻破的服务器或传输通道。若他人取得已解锁的设备，则可能访问导出的文件，因此我们建议启用设备锁屏。</p>
+
+<h2>本政策的变更</h2>
+<p>我们可能不时更新本政策。重大变更将在此页面以新的“最后更新”日期体现。变更后继续使用本应用即表示接受修订后的政策。</p>
+
+<h2>联系方式</h2>
+<p>如有疑问、投诉或数据请求：<a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a>。若您位于欧盟或英国且对我们的答复不满意，可向当地数据保护机构投诉。</p>
+
+<hr>
+
+<!-- ==================== ESPAÑOL ==================== -->
+<h2 id="es" class="lang-head">Español</h2>
+
+<p>DriveMeter («la aplicación») es un velocímetro GPS y medidor de coste por trayecto para conductores. Esta política explica qué datos maneja la aplicación, con qué finalidad y qué control tiene usted. <strong>La aplicación no tiene cuentas de usuario, ni servidor, ni permiso de acceso a internet.</strong> Todo lo que registra permanece en su dispositivo.</p>
+
+<div class="callout">
+  <strong>Verificable, no solo prometido.</strong> DriveMeter no declara el permiso <code>android.permission.INTERNET</code>. Sin él, Android impide que la aplicación abra cualquier conexión de red, por lo que sus datos de trayecto y ubicación no pueden transmitirse a ningún sitio, ni por nosotros ni por nadie. Puede comprobarlo usted mismo en la lista de permisos de la aplicación en Play Store.
+</div>
+
+<h2>Quiénes somos</h2>
+<p>DriveMeter es publicada por Overdrive Labs. Somos el responsable del tratamiento a efectos del RGPD, aunque en la práctica nunca recibimos sus datos: se crean y se almacenan únicamente en su dispositivo.</p>
+
+<h2>Datos que maneja la aplicación</h2>
+<ul>
+  <li><strong>Datos de ubicación.</strong> Con su permiso, la aplicación lee la posición GPS del dispositivo mientras se registra un trayecto. Las coordenadas se usan solo para calcular velocidad, distancia recorrida y tiempo detenido, lo que produce el coste de combustible o electricidad del trayecto. Todo el procesamiento ocurre en su dispositivo.</li>
+  <li><strong>Ubicación en segundo plano.</strong> Los conductores suelen iniciar un trayecto y cambiar después a su aplicación de navegación o de transporte. Para seguir midiendo durante ese tiempo, DriveMeter solicita el acceso a la ubicación «Permitir todo el tiempo» y ejecuta un servicio en primer plano. El seguimiento funciona <strong>únicamente mientras un trayecto se está registrando</strong>: usted lo inicia pulsando INICIAR TRAYECTO y lo detiene pulsando FINALIZAR. Durante todo el proceso se muestra una notificación persistente con velocidad, distancia y coste en tiempo real. Al finalizar el trayecto, el acceso a la ubicación cesa de inmediato.</li>
+  <li><strong>Registros de trayecto.</strong> Distancia, duración, tiempo al ralentí, velocidad máxima, energía consumida y coste de cada trayecto se guardan en una base de datos local. Puede clasificar un trayecto como Profesional o Personal, añadir una nota y registrar la tarifa cobrada.</li>
+  <li><strong>Ajustes de vehículo y tarifas.</strong> Los nombres de vehículos, cifras de consumo o eficiencia, precios de energía y tarifas eléctricas por franja horaria que introduzca se almacenan localmente.</li>
+  <li><strong>Puntos de ruta (desactivado por defecto).</strong> La aplicación puede almacenar opcionalmente los puntos GPS individuales de un trayecto. Este ajuste está <strong>desactivado salvo que usted lo active</strong>, y esos puntos pueden borrarse por separado del historial en cualquier momento.</li>
+  <li><strong>Preferencias de la aplicación.</strong> Unidades, moneda, opciones de visualización y ajustes similares se almacenan localmente.</li>
+</ul>
+
+<h2>Lo que no recopilamos</h2>
+<ul>
+  <li>Sin cuentas, inicio de sesión, correo electrónico ni perfil de usuario: no hay nada que registrar.</li>
+  <li>Sin servidor ni base de datos operados por nosotros. Nunca recibimos una copia de sus datos.</li>
+  <li>Sin analíticas, informes de fallos ni SDK de seguimiento de ningún tipo.</li>
+  <li>Sin publicidad ni identificador publicitario.</li>
+  <li>Sin acceso a contactos, registros de llamadas, SMS, fotos ni archivos.</li>
+  <li>No vendemos, compartimos ni transferimos sus datos personales. La aplicación no puede hacerlo, al carecer de acceso a la red.</li>
+</ul>
+
+<h2>Permisos y por qué son necesarios</h2>
+<ul>
+  <li><strong>Ubicación precisa y aproximada.</strong> Función principal: medir velocidad, distancia y coste del trayecto.</li>
+  <li><strong>Ubicación en segundo plano.</strong> Necesaria porque la medición debe continuar cuando usted cambia a su aplicación de navegación durante el trayecto.</li>
+  <li><strong>Servicio en primer plano (tipo ubicación).</strong> Mantiene la medición activa con una notificación visible mientras la aplicación no está en pantalla.</li>
+  <li><strong>Notificaciones.</strong> Muestra la notificación de estado del trayecto en curso.</li>
+  <li><strong>Mostrar sobre otras aplicaciones (opcional).</strong> Muestra el medidor flotante sobre su aplicación de navegación. La aplicación funciona por completo sin este permiso.</li>
+  <li><strong>Ignorar optimización de batería (opcional).</strong> Evita que el sistema interrumpa el seguimiento durante una jornada larga. Puede rechazarlo.</li>
+  <li><strong>Wake lock.</strong> Mantiene la pantalla encendida con el dispositivo en soporte, si activa ese ajuste.</li>
+</ul>
+
+<h2>Base jurídica del tratamiento (RGPD)</h2>
+<p>Cuando resulte aplicable el RGPD, nuestra base jurídica es su <strong>consentimiento</strong> (artículo 6.1.a), otorgado al conceder el permiso de ubicación, y la <strong>ejecución de un contrato</strong> (artículo 6.1.b) respecto de la funcionalidad que usted solicita. Puede retirar el consentimiento en cualquier momento revocando el permiso de ubicación en los ajustes del dispositivo; la aplicación dejará de medir trayectos, pero seguirá sirviendo para consultar registros anteriores.</p>
+
+<h2>Sus derechos</h2>
+<p>Conforme al RGPD, la PIPL, la CCPA, la PDPA y leyes similares, usted tiene derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición. Dado que sus datos nunca salen del dispositivo, ejerce estos derechos directamente en la aplicación, sin necesidad de contactarnos:</p>
+<ul>
+  <li><strong>Acceso y portabilidad</strong>: exporte sus trayectos a CSV o PDF desde la lista de trayectos.</li>
+  <li><strong>Rectificación</strong>: edite la clasificación, notas, tarifas, vehículos y precios en la aplicación.</li>
+  <li><strong>Supresión</strong>: deslice para borrar trayectos individuales o use <em>Ajustes → Privacidad y datos → Eliminar todos los datos</em>. Desinstalar la elimina todo.</li>
+  <li><strong>Limitación y oposición</strong>: revoque el permiso de ubicación o desactive los puntos de ruta.</li>
+</ul>
+<p>No conservamos ninguna copia de sus datos, por lo que no existe cuenta alguna que podamos consultar, corregir o eliminar en su nombre.</p>
+
+<h2>Dónde se almacenan sus datos</h2>
+<p>Todos los datos se guardan en una base de datos SQLite dentro del almacenamiento privado de la aplicación en su dispositivo. La aplicación no realiza copias de seguridad en la nube. Los archivos que usted exporte explícitamente (informes CSV o PDF) se escriben en el almacenamiento del dispositivo y solo se comparten si usted decide hacerlo mediante el menú de compartir del sistema, momento en el que pasan a ser gestionados por la aplicación de destino.</p>
+
+<h2>Transferencias internacionales</h2>
+<p>Ninguna. La aplicación no transmite sus datos fuera del dispositivo, por lo que no se produce transferencia transfronteriza alguna.</p>
+
+<h2>Conservación y eliminación de datos</h2>
+<p>Sus datos se conservan mientras usted los mantenga. Borre trayectos individuales deslizándolos en la lista, o elimine todo de una vez mediante <em>Ajustes → Privacidad y datos → Eliminar todos los datos</em>. Al no haber servidor, no existe cuenta alguna que eliminar por nuestra parte. Desinstalar la aplicación elimina todos los datos almacenados localmente.</p>
+
+<h2>Menores</h2>
+<p>La aplicación no está dirigida a menores de 13 años (o la edad mínima equivalente en su jurisdicción) y no recopila conscientemente datos de ellos.</p>
+
+<h2>Seguridad</h2>
+<p>Los datos residen en el almacenamiento privado de la aplicación, que el sistema operativo aísla de otras aplicaciones. Al no transmitirse nada, no hay servidor ni canal de transmisión vulnerable. El acceso físico a un dispositivo desbloqueado permitiría acceder a los archivos exportados, por lo que recomendamos mantener activado el bloqueo del dispositivo.</p>
+
+<h2>Cambios en esta política</h2>
+<p>Podemos actualizar esta política periódicamente. Los cambios sustanciales se reflejarán aquí con una nueva fecha de «última actualización». El uso continuado de la aplicación tras un cambio implica la aceptación de la política revisada.</p>
+
+<h2>Contacto</h2>
+<p>Preguntas, reclamaciones o solicitudes de datos: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a>. Si se encuentra en la UE o el Reino Unido y no queda satisfecho con nuestra respuesta, puede presentar una reclamación ante su autoridad local de protección de datos.</p>
+
+<hr>
+
+<!-- ==================== العربية ==================== -->
+<div dir="rtl" lang="ar">
+
+<h2 id="ar" class="lang-head">العربية</h2>
+
+<p>‏DriveMeter («التطبيق») هو عدّاد سرعة يعمل بنظام تحديد المواقع ومقياس لتكلفة الرحلة موجَّه للسائقين. توضّح هذه السياسة البيانات التي يتعامل معها التطبيق والغرض منها ونطاق تحكّمك بها. <strong>لا يحتوي التطبيق على حسابات مستخدمين ولا خادم ولا إذن للوصول إلى الإنترنت.</strong> كل ما تسجّله يبقى على جهازك.</p>
+
+<div class="callout">
+  <strong>قابل للتحقّق، وليس مجرّد وعد.</strong> لا يعلن DriveMeter عن إذن <code>android.permission.INTERNET</code>. وبدون هذا الإذن يمنع نظام أندرويد التطبيق من فتح أي اتصال شبكي، ولذلك لا يمكن تقنيًا نقل بيانات رحلاتك ومواقعك إلى أي جهة، لا من قِبَلنا ولا من قِبَل غيرنا. ويمكنك التحقّق من ذلك بنفسك في قائمة أذونات التطبيق على متجر Play.
+</div>
+
+<h2>من نحن</h2>
+<p>يصدر تطبيق DriveMeter عن Overdrive Labs. نحن المتحكّم في البيانات وفق اللائحة العامة لحماية البيانات (GDPR)، غير أننا عمليًا لا نتلقّى بياناتك مطلقًا: فهي تُنشأ وتُخزَّن على جهازك وحده.</p>
+
+<h2>البيانات التي يتعامل معها التطبيق</h2>
+<ul>
+  <li><strong>بيانات الموقع.</strong> يقرأ التطبيق، بعد إذنك، موقع جهازك عبر GPS أثناء تسجيل رحلة. تُستخدم الإحداثيات فقط لحساب السرعة والمسافة المقطوعة ومدة التوقّف، وهي ما ينتج عنه تكلفة الوقود أو الكهرباء للرحلة. تجري كل المعالجة على جهازك.</li>
+  <li><strong>الموقع في الخلفية.</strong> يبدأ السائقون عادةً رحلة ثم ينتقلون إلى تطبيق ملاحة أو تطبيق نقل تشاركي. ولمواصلة القياس خلال تلك المدة يطلب DriveMeter إذن الموقع «السماح طوال الوقت» ويشغّل خدمة في المقدّمة. يعمل التتبّع <strong>فقط أثناء تسجيل رحلة نشطة</strong>، تبدؤها بالضغط على «بدء الرحلة» وتنهيها بالضغط على «إنهاء». ويظهر طوال المدة إشعار دائم يعرض السرعة والمسافة والتكلفة لحظيًا. وبمجرد إنهاء الرحلة يتوقف الوصول إلى الموقع فورًا.</li>
+  <li><strong>سجلات الرحلات.</strong> تُحفَظ المسافة والمدة ووقت التوقّف والسرعة القصوى والطاقة المستهلكة والتكلفة لكل رحلة في قاعدة بيانات محلية. ويمكنك تصنيف الرحلة كعمل أو شخصية، وإضافة ملاحظة، وتسجيل الأجرة.</li>
+  <li><strong>إعدادات المركبة والأسعار.</strong> تُخزَّن محليًا أسماء المركبات وأرقام كفاءة استهلاك الوقود أو الطاقة وأسعار الطاقة وتعرفة الكهرباء حسب وقت الاستخدام التي تدخلها.</li>
+  <li><strong>نقاط المسار (معطّلة افتراضيًا).</strong> يمكن للتطبيق اختياريًا تخزين نقاط GPS المنفردة للرحلة. هذا الإعداد <strong>معطّل ما لم تفعّله بنفسك</strong>، ويمكن حذف تلك النقاط بمعزل عن سجل الرحلات في أي وقت.</li>
+  <li><strong>تفضيلات التطبيق.</strong> تُخزَّن محليًا وحدات القياس والعملة وخيارات العرض والإعدادات المشابهة.</li>
+</ul>
+
+<h2>ما لا نجمعه</h2>
+<ul>
+  <li>لا حسابات ولا تسجيل دخول ولا بريد إلكتروني ولا ملف تعريف مستخدم — فلا شيء يستوجب التسجيل.</li>
+  <li>لا خادم ولا قاعدة بيانات نديرها. ولا نتلقّى نسخة من بياناتك مطلقًا.</li>
+  <li>لا أدوات تحليلات ولا تقارير أعطال ولا حزم تتبّع من أي نوع.</li>
+  <li>لا إعلانات ولا معرّف إعلاني.</li>
+  <li>لا وصول إلى جهات الاتصال أو سجلات المكالمات أو الرسائل النصية أو الصور أو الملفات.</li>
+  <li>لا نبيع بياناتك الشخصية ولا نشاركها ولا ننقلها. والتطبيق لا يستطيع ذلك أصلًا لانعدام وصوله إلى الشبكة.</li>
+</ul>
+
+<h2>الأذونات وسبب الحاجة إلى كل منها</h2>
+<ul>
+  <li><strong>الموقع الدقيق والتقريبي.</strong> الوظيفة الأساسية: قياس السرعة والمسافة وتكلفة الرحلة.</li>
+  <li><strong>الموقع في الخلفية.</strong> ضروري لأن القياس يجب أن يستمر عند انتقالك إلى تطبيق الملاحة أثناء الرحلة.</li>
+  <li><strong>خدمة في المقدّمة (من نوع الموقع).</strong> تُبقي قياس الرحلة عاملًا مع إشعار ظاهر ومستمر بينما يكون التطبيق خارج الشاشة.</li>
+  <li><strong>الإشعارات.</strong> لعرض إشعار حالة الرحلة الجارية.</li>
+  <li><strong>العرض فوق التطبيقات الأخرى (اختياري).</strong> لإظهار العدّاد العائم فوق تطبيق الملاحة. ويعمل التطبيق بكامل وظائفه بدونه.</li>
+  <li><strong>تجاهل تحسين البطارية (اختياري).</strong> يمنع النظام من إنهاء تتبّع الرحلة خلال نوبة عمل طويلة. ويمكنك رفضه.</li>
+  <li><strong>إبقاء الجهاز مستيقظًا.</strong> يُبقي الشاشة مضاءة أثناء تثبيت الجهاز، إذا فعّلت هذا الإعداد.</li>
+</ul>
+
+<h2>الأساس القانوني للمعالجة (GDPR)</h2>
+<p>حيثما تنطبق اللائحة العامة لحماية البيانات، يكون أساسنا القانوني هو <strong>موافقتك</strong> (المادة 6(1)(أ)) الممنوحة عند منحك إذن الموقع، و<strong>تنفيذ عقد</strong> (المادة 6(1)(ب)) فيما يخص وظائف التطبيق التي طلبتها. ويمكنك سحب موافقتك في أي وقت بإلغاء إذن الموقع من إعدادات جهازك؛ عندها يتوقف التطبيق عن قياس الرحلات مع بقائه صالحًا لعرض السجلات السابقة.</p>
+
+<h2>حقوقك</h2>
+<p>بموجب اللائحة العامة لحماية البيانات وقانون حماية المعلومات الشخصية الصيني (PIPL) وقانون CCPA وقانون PDPA وما ماثلها، لك حقوق الوصول والتصحيح والمحو وتقييد المعالجة وقابلية النقل والاعتراض. ولأن بياناتك لا تغادر جهازك، فإنك تمارس هذه الحقوق مباشرةً داخل التطبيق بدلًا من مراسلتنا:</p>
+<ul>
+  <li><strong>الوصول وقابلية النقل</strong> — صدّر رحلاتك بصيغة CSV أو PDF من قائمة الرحلات.</li>
+  <li><strong>التصحيح</strong> — عدّل تصنيف الرحلة والملاحظات والأجرة والمركبات والأسعار داخل التطبيق.</li>
+  <li><strong>المحو</strong> — اسحب لحذف رحلات منفردة، أو استخدم <em>الإعدادات ← الخصوصية والبيانات ← حذف كل البيانات</em>. وإلغاء تثبيت التطبيق يزيل كل شيء.</li>
+  <li><strong>التقييد والاعتراض</strong> — ألغِ إذن الموقع، أو عطّل تسجيل نقاط المسار.</li>
+</ul>
+<p>لا نحتفظ بأي نسخة من بياناتك، ومن ثمّ لا يوجد حساب لدينا نبحث فيه أو نصحّحه أو نحذفه نيابةً عنك.</p>
+
+<h2>أين تُخزَّن بياناتك</h2>
+<p>تُخزَّن جميع البيانات في قاعدة بيانات SQLite ضمن مساحة التخزين الخاصة بالتطبيق على جهازك. ولا يُجري التطبيق أي نسخ احتياطي سحابي. أما الملفات التي تصدّرها أنت صراحةً (تقارير CSV أو PDF) فتُكتب في مساحة تخزين جهازك ولا تُشارَك إلا إذا اخترت مشاركتها عبر قائمة المشاركة في نظامك، وعندها يتولّى التعامل معها التطبيق الذي أرسلتها إليه.</p>
+
+<h2>عمليات النقل الدولية</h2>
+<p>لا يوجد. فالتطبيق لا ينقل بياناتك خارج جهازك، ومن ثمّ لا يحدث أي نقل عبر الحدود.</p>
+
+<h2>الاحتفاظ بالبيانات وحذفها</h2>
+<p>تبقى بياناتك ما دمت تحتفظ بها. احذف رحلات منفردة بسحبها في قائمة الرحلات، أو امسح كل شيء دفعةً واحدة عبر <em>الإعدادات ← الخصوصية والبيانات ← حذف كل البيانات</em>. ولانعدام وجود خادم، لا يوجد لدينا حساب يُحذف. ويؤدي إلغاء تثبيت التطبيق إلى إزالة جميع البيانات المخزَّنة محليًا.</p>
+
+<h2>الأطفال</h2>
+<p>التطبيق غير موجَّه للأطفال دون سن 13 عامًا (أو الحد الأدنى المكافئ للسن في نطاق ولايتك القضائية)، ولا يجمع بياناتهم عن علم.</p>
+
+<h2>الأمان</h2>
+<p>تُحفَظ البيانات في مساحة التخزين الخاصة بالتطبيق، التي يعزلها نظام التشغيل عن التطبيقات الأخرى. ولأن شيئًا لا يُنقل، فلا يوجد خادم أو قناة نقل عرضة للاختراق. غير أن الوصول المادي إلى جهاز غير مقفل يتيح الاطلاع على الملفات المصدَّرة، ولذلك ننصح بإبقاء قفل الجهاز مفعّلًا.</p>
+
+<h2>التغييرات على هذه السياسة</h2>
+<p>قد نحدّث هذه السياسة من حين إلى آخر. وستظهر التغييرات الجوهرية هنا مصحوبةً بتاريخ «آخر تحديث» جديد. ويُعدّ استمرارك في استخدام التطبيق بعد التغيير قبولًا للسياسة المعدّلة.</p>
+
+<h2>التواصل</h2>
+<p>للاستفسارات أو الشكاوى أو طلبات البيانات: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a>. وإذا كنت في الاتحاد الأوروبي أو المملكة المتحدة ولم تقتنع بردّنا، فيمكنك تقديم شكوى إلى هيئة حماية البيانات المحلية لديك.</p>
+
+</div>
+
+<hr>
+
+<!-- ==================== ภาษาไทย ==================== -->
+<h2 id="th" class="lang-head">ภาษาไทย</h2>
+
+<p>DriveMeter ("แอป") เป็นแอปวัดความเร็ว GPS และมิเตอร์ค่าใช้จ่ายต่อเที่ยวสำหรับคนขับรถ นโยบายนี้อธิบายว่าแอปจัดการข้อมูลอะไรบ้าง เพื่ออะไร และคุณควบคุมอะไรได้ <strong>แอปไม่มีระบบบัญชีผู้ใช้ ไม่มีเซิร์ฟเวอร์ และไม่มีสิทธิ์เข้าถึงอินเทอร์เน็ต</strong> ทุกอย่างที่คุณบันทึกอยู่ในเครื่องของคุณ</p>
+
+<div class="callout">
+  <strong>ตรวจสอบได้จริง ไม่ใช่แค่คำสัญญา</strong> — DriveMeter ไม่ได้ประกาศสิทธิ์ <code>android.permission.INTERNET</code> เมื่อไม่มีสิทธิ์นี้ Android จะบล็อกไม่ให้แอปเปิดการเชื่อมต่อเครือข่ายใด ๆ ข้อมูลทริปและตำแหน่งของคุณจึงส่งออกไปไหนไม่ได้ในทางเทคนิค ไม่ว่าโดยเราหรือใครก็ตาม คุณตรวจสอบเองได้จากรายการสิทธิ์ของแอปใน Play Store
+</div>
+
+<h2>เราคือใคร</h2>
+<p>DriveMeter เผยแพร่โดย Overdrive Labs เราเป็นผู้ควบคุมข้อมูลตามนิยามของ GDPR แม้ในทางปฏิบัติเราจะไม่เคยได้รับข้อมูลของคุณเลย เพราะข้อมูลถูกสร้างและเก็บอยู่บนเครื่องของคุณเท่านั้น</p>
+
+<h2>ข้อมูลที่แอปจัดการ</h2>
+<ul>
+  <li><strong>ข้อมูลตำแหน่ง</strong> — เมื่อคุณอนุญาต แอปจะอ่านตำแหน่ง GPS ของเครื่องขณะบันทึกทริป พิกัดถูกใช้เพื่อคำนวณความเร็ว ระยะทางที่วิ่ง และเวลาที่จอดนิ่งเท่านั้น ซึ่งนำไปคิดเป็นค่าน้ำมันหรือค่าไฟของทริปนั้น การประมวลผลทั้งหมดเกิดขึ้นบนเครื่องของคุณ</li>
+  <li><strong>ตำแหน่งเบื้องหลัง</strong> — โดยทั่วไปคนขับจะเริ่มทริปแล้วสลับไปใช้แอปนำทางหรือแอปเรียกรถ เพื่อให้วัดผลต่อเนื่องได้ในช่วงนั้น DriveMeter จึงขอสิทธิ์ตำแหน่งแบบ "อนุญาตตลอดเวลา" และใช้ foreground service การติดตามทำงาน<strong>เฉพาะขณะที่กำลังบันทึกทริปอยู่เท่านั้น</strong> โดยคุณเป็นผู้เริ่มด้วยการกด START TRIP และหยุดด้วยการกด FINISH ตลอดเวลานั้นจะมีการแจ้งเตือนค้างแสดงความเร็ว ระยะทาง และค่าใช้จ่ายแบบเรียลไทม์ เมื่อจบทริป การเข้าถึงตำแหน่งจะหยุดทันที</li>
+  <li><strong>บันทึกทริป</strong> — ระยะทาง ระยะเวลา เวลาจอดนิ่ง ความเร็วสูงสุด พลังงานที่ใช้ และค่าใช้จ่ายของแต่ละทริป ถูกเก็บในฐานข้อมูลในเครื่อง คุณสามารถระบุว่าเป็นทริปงานหรือส่วนตัว ใส่หมายเหตุ และบันทึกค่าโดยสารได้</li>
+  <li><strong>ข้อมูลรถและอัตราค่าพลังงาน</strong> — ชื่อรถ อัตราสิ้นเปลืองหรือประสิทธิภาพพลังงาน ราคาพลังงาน และอัตราค่าไฟตามช่วงเวลาที่คุณกรอก ถูกเก็บไว้ในเครื่อง</li>
+  <li><strong>จุดเส้นทาง (ปิดไว้เป็นค่าเริ่มต้น)</strong> — แอปสามารถเก็บจุด GPS แต่ละจุดของทริปได้ ตัวเลือกนี้<strong>ปิดอยู่จนกว่าคุณจะเปิดเอง</strong> และจุดเหล่านั้นลบแยกจากประวัติทริปได้ทุกเมื่อ</li>
+  <li><strong>การตั้งค่าแอป</strong> — หน่วยวัด สกุลเงิน ตัวเลือกการแสดงผล และการตั้งค่าอื่น ๆ เก็บไว้ในเครื่อง</li>
 </ul>
 
 <h2>ข้อมูลที่เราไม่เก็บ</h2>
 <ul>
   <li>ไม่มีบัญชีผู้ใช้ ไม่มีการลงชื่อเข้าใช้ ไม่มีอีเมลหรือโปรไฟล์ — ไม่มีอะไรให้สมัคร</li>
-  <li>ไม่มีเซิร์ฟเวอร์หรือฐานข้อมูลของผู้พัฒนา เราไม่เคยได้รับสำเนาข้อมูลของคุณ</li>
+  <li>ไม่มีเซิร์ฟเวอร์หรือฐานข้อมูลที่เราดูแล เราไม่เคยได้รับสำเนาข้อมูลของคุณ</li>
   <li>ไม่มี analytics ไม่มีระบบรายงานข้อผิดพลาด ไม่มี tracking SDK ใด ๆ</li>
-  <li>ไม่มีโฆษณา และไม่มีการใช้รหัสโฆษณา</li>
+  <li>ไม่มีโฆษณา และไม่ใช้รหัสโฆษณา</li>
   <li>ไม่เข้าถึงรายชื่อผู้ติดต่อ ประวัติการโทร SMS รูปภาพ หรือไฟล์ใด ๆ</li>
-  <li>เราไม่ขาย ไม่แชร์ และไม่โอนข้อมูลส่วนตัวของคุณให้ใคร ซึ่งแอปทำไม่ได้อยู่แล้วเพราะไม่มีสิทธิ์เข้าถึงเครือข่าย</li>
+  <li>เราไม่ขาย ไม่แชร์ และไม่โอนข้อมูลส่วนบุคคลของคุณ ซึ่งแอปก็ทำไม่ได้อยู่แล้วเพราะไม่มีสิทธิ์เข้าถึงเครือข่าย</li>
 </ul>
 
 <h2>สิทธิ์ที่ใช้และเหตุผล</h2>
 <ul>
-  <li><strong>ตำแหน่ง (แม่นยำ และเบื้องหลัง)</strong> — ฟังก์ชันหลักของแอป ใช้วัดความเร็ว ระยะทาง และค่าใช้จ่าย สิทธิ์เบื้องหลังจำเป็นเพราะการวัดต้องดำเนินต่อเมื่อคุณสลับไปแอปนำทางระหว่างเดินทาง</li>
+  <li><strong>ตำแหน่งแม่นยำและตำแหน่งโดยประมาณ</strong> — ฟังก์ชันหลักของแอป ใช้วัดความเร็ว ระยะทาง และค่าใช้จ่าย</li>
+  <li><strong>ตำแหน่งเบื้องหลัง</strong> — จำเป็น เพราะการวัดต้องดำเนินต่อเมื่อคุณสลับไปแอปนำทางระหว่างเดินทาง</li>
   <li><strong>Foreground service (ประเภทตำแหน่ง)</strong> — ทำให้การวัดทริปทำงานต่อได้พร้อมการแจ้งเตือนที่มองเห็นตลอด ขณะที่แอปไม่ได้อยู่บนหน้าจอ</li>
   <li><strong>การแจ้งเตือน</strong> — แสดงสถานะทริปที่กำลังบันทึก</li>
-  <li><strong>แสดงทับแอปอื่น (ไม่บังคับ)</strong> — แสดงมิเตอร์ลอยเหนือแอปนำทาง แอปใช้งานได้ครบถ้วนแม้ไม่อนุญาตข้อนี้</li>
+  <li><strong>แสดงทับแอปอื่น (ไม่บังคับ)</strong> — แสดงมิเตอร์ลอยเหนือแอปนำทาง แอปใช้งานได้ครบถ้วนแม้ไม่อนุญาต</li>
   <li><strong>ยกเว้นการประหยัดแบตเตอรี่ (ไม่บังคับ)</strong> — ป้องกันระบบปิดการติดตามระหว่างทำงานเป็นกะยาว คุณปฏิเสธได้</li>
   <li><strong>Wake lock</strong> — ป้องกันหน้าจอดับขณะติดตั้งเครื่องบนรถ หากคุณเปิดใช้การตั้งค่านี้</li>
 </ul>
 
+<h2>ฐานทางกฎหมายในการประมวลผล (GDPR)</h2>
+<p>ในกรณีที่ GDPR มีผลบังคับใช้ ฐานทางกฎหมายของเราคือ<strong>ความยินยอม</strong>ของคุณ (มาตรา 6(1)(a)) ซึ่งให้ไว้เมื่อคุณอนุญาตสิทธิ์ตำแหน่ง และ<strong>การปฏิบัติตามสัญญา</strong> (มาตรา 6(1)(b)) สำหรับฟังก์ชันของแอปที่คุณร้องขอ คุณถอนความยินยอมได้ทุกเมื่อโดยยกเลิกสิทธิ์ตำแหน่งในการตั้งค่าเครื่อง แอปจะหยุดวัดทริปแต่ยังใช้ดูบันทึกเดิมได้</p>
+
+<h2>สิทธิของคุณ</h2>
+<p>ภายใต้ GDPR, PIPL, CCPA, พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล (PDPA) และกฎหมายที่คล้ายกัน คุณมีสิทธิเข้าถึง แก้ไข ลบ จำกัดการประมวลผล ขอโอนย้าย และคัดค้าน เนื่องจากข้อมูลของคุณไม่เคยออกจากเครื่อง คุณจึงใช้สิทธิเหล่านี้ได้โดยตรงในแอปโดยไม่ต้องติดต่อเรา:</p>
+<ul>
+  <li><strong>เข้าถึงและโอนย้าย</strong> — ส่งออกทริปเป็น CSV หรือ PDF จากหน้ารายการทริป</li>
+  <li><strong>แก้ไข</strong> — แก้ประเภททริป หมายเหตุ ค่าโดยสาร ข้อมูลรถ และอัตราค่าพลังงานได้ในแอป</li>
+  <li><strong>ลบ</strong> — ปัดเพื่อลบทริปทีละรายการ หรือใช้ <em>การตั้งค่า → ความเป็นส่วนตัวและข้อมูล → ลบข้อมูลทั้งหมด</em> การถอนการติดตั้งจะลบทุกอย่าง</li>
+  <li><strong>จำกัดและคัดค้าน</strong> — ยกเลิกสิทธิ์ตำแหน่ง หรือปิดการเก็บจุดเส้นทาง</li>
+</ul>
+<p>เราไม่มีสำเนาข้อมูลของคุณเลย จึงไม่มีบัญชีใดให้เราค้นหา แก้ไข หรือลบแทนคุณ</p>
+
 <h2>ที่เก็บข้อมูล</h2>
-<p>ข้อมูลทั้งหมดเก็บในฐานข้อมูล SQLite ในพื้นที่ส่วนตัวของแอปบนเครื่องคุณ แอปไม่ได้สำรองข้อมูลขึ้นบริการคลาวด์ใด ๆ ไฟล์ที่คุณส่งออกเอง (รายงาน CSV หรือ PDF) จะถูกเขียนลงที่เก็บข้อมูลของเครื่อง และจะถูกแชร์ก็ต่อเมื่อคุณเลือกแชร์ผ่านเมนูแชร์ของระบบเท่านั้น</p>
+<p>ข้อมูลทั้งหมดเก็บในฐานข้อมูล SQLite ในพื้นที่ส่วนตัวของแอปบนเครื่องคุณ แอปไม่ได้สำรองข้อมูลขึ้นคลาวด์ใด ๆ ไฟล์ที่คุณส่งออกเอง (รายงาน CSV หรือ PDF) จะถูกเขียนลงที่เก็บข้อมูลของเครื่อง และจะถูกแชร์ก็ต่อเมื่อคุณเลือกแชร์ผ่านเมนูแชร์ของระบบเท่านั้น ซึ่งหลังจากนั้นจะอยู่ในความดูแลของแอปปลายทางที่คุณส่งไป</p>
+
+<h2>การโอนข้อมูลข้ามประเทศ</h2>
+<p>ไม่มี แอปไม่ได้ส่งข้อมูลของคุณออกนอกเครื่อง จึงไม่เกิดการโอนข้ามพรมแดนใด ๆ</p>
 
 <h2>การเก็บรักษาและการลบข้อมูล</h2>
-<p>ข้อมูลของคุณอยู่ตราบเท่าที่คุณเก็บไว้ คุณลบทริปแต่ละรายการได้ด้วยการปัดในหน้ารายการทริป หรือลบทั้งหมดพร้อมกันได้ที่ <em>การตั้งค่า → ความเป็นส่วนตัวและข้อมูล → ลบข้อมูลทั้งหมด</em> เนื่องจากไม่มีเซิร์ฟเวอร์ จึงไม่มีบัญชีฝั่งเราให้ลบ การถอนการติดตั้งแอปจะลบข้อมูลในเครื่องทั้งหมด</p>
+<p>ข้อมูลของคุณอยู่ตราบเท่าที่คุณเก็บไว้ ลบทริปทีละรายการได้ด้วยการปัดในหน้ารายการทริป หรือลบทั้งหมดพร้อมกันที่ <em>การตั้งค่า → ความเป็นส่วนตัวและข้อมูล → ลบข้อมูลทั้งหมด</em> เนื่องจากไม่มีเซิร์ฟเวอร์ จึงไม่มีบัญชีฝั่งเราให้ลบ การถอนการติดตั้งแอปจะลบข้อมูลในเครื่องทั้งหมด</p>
 
 <h2>เด็ก</h2>
-<p>แอปนี้ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี และไม่มีการเก็บข้อมูลจากเด็กโดยเจตนา</p>
+<p>แอปนี้ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี (หรืออายุขั้นต่ำที่เทียบเท่าในเขตอำนาจศาลของคุณ) และไม่มีการเก็บข้อมูลจากเด็กโดยเจตนา</p>
 
-<h2>การเปลี่ยนแปลง</h2>
-<p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงที่มีนัยสำคัญจะแสดงบนหน้านี้พร้อมวันที่ "ปรับปรุงล่าสุด" ใหม่</p>
+<h2>ความปลอดภัย</h2>
+<p>ข้อมูลอยู่ในพื้นที่จัดเก็บส่วนตัวของแอป ซึ่งระบบปฏิบัติการแยกออกจากแอปอื่น เนื่องจากไม่มีการส่งข้อมูลออกไปไหน จึงไม่มีเซิร์ฟเวอร์หรือช่องทางส่งข้อมูลให้ถูกเจาะได้ อย่างไรก็ตาม ผู้ที่เข้าถึงเครื่องที่ปลดล็อกอยู่จะเปิดไฟล์ที่ส่งออกไว้ได้ เราจึงแนะนำให้เปิดใช้การล็อกหน้าจอเสมอ</p>
+
+<h2>การเปลี่ยนแปลงนโยบายนี้</h2>
+<p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงที่มีนัยสำคัญจะแสดงบนหน้านี้พร้อมวันที่ "ปรับปรุงล่าสุด" ใหม่ การใช้แอปต่อไปหลังมีการเปลี่ยนแปลงถือเป็นการยอมรับนโยบายฉบับแก้ไข</p>
 
 <h2>ติดต่อ</h2>
-<p>สำหรับคำถามหรือการขอลบข้อมูล: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a></p>
+<p>คำถาม ข้อร้องเรียน หรือคำขอเกี่ยวกับข้อมูล: <a href="mailto:hom.garena@gmail.com">hom.garena@gmail.com</a> หากคุณอยู่ในสหภาพยุโรปหรือสหราชอาณาจักรและไม่พอใจคำตอบของเรา คุณสามารถยื่นเรื่องร้องเรียนต่อหน่วยงานคุ้มครองข้อมูลในประเทศของคุณได้</p>
